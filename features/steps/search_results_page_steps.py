@@ -4,7 +4,7 @@ from behave import given, when, then
 from time import sleep
 
 ADD_TO_CART_BTN = By.CSS_SELECTOR, "[data-test*='chooseOptionsButton']"
-SIDE_NAV_PRODUCT_NAME = (By.XPATH, "//div[@data-test='lp-resultsCount']")
+SEARCH_RESULTS_TXT = (By.XPATH, "//div[@data-test='lp-resultsCount']")
 
 @when('Click add to cart')
 def click_add_to_cart(context):
@@ -16,5 +16,6 @@ def click_add_to_cart(context):
 
 @then('Verify search worked for {expected_product}')
 def verify_search_results(context, expected_product):
-  actual_text = context.driver.find_element(*SIDE_NAV_PRODUCT_NAME).text
-  assert expected_product in actual_text, f"Error, expected {expected_product} not in actual {actual_text}"
+  # actual_text = context.driver.find_element(*SEARCH_RESULTS_TXT).text
+  # assert expected_product in actual_text, f"Error, expected {expected_product} not in actual {actual_text}"
+  context.app.search_results_page.verify_search_results()

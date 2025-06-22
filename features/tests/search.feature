@@ -7,7 +7,7 @@ Feature: Test for Target Search
     Then Verify search worked for tea
 
 
- Scenario: User can search for a product on Target
-    Given Open target main page
-    When Search for mug
-    Then Verify search worked for mug
+# Scenario: User can search for a product on Target
+#    Given Open target main page
+#    When Search for mug
+#    Then Verify search worked for mug

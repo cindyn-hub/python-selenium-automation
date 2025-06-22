@@ -12,14 +12,14 @@ SIGNIN_LINK = By.XPATH, '//span [@class="sc-43f80224-3 fBDEOp h-margin-r-x3"]'
 
 @when('Search for {product}')
 def search_products(context, product):
-  context.driver.find_element(*SEARCH_BAR).send_keys(product)
-  context.driver.wait.until(EC.element_to_be_clickable(SEARCH_BTN)).click()
-
+  # context.driver.find_element(*SEARCH_BAR).send_keys(product)
+  # context.driver.wait.until(EC.element_to_be_clickable(SEARCH_BTN)).click()
+  context.app.header.search_product()
 
 @when('Click Cart icon')
 def click_cart_icon(context):
-    context.driver.wait.until(EC.element_to_be_clickable(CART_BTN)).click()
-
+    # context.driver.wait.until(EC.element_to_be_clickable(CART_BTN)).click()
+    context.app.header.click_cart_icon()
 
 @when('Click Sign In link')
 def click_signin_link(context):
