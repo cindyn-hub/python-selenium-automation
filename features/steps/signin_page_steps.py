@@ -6,5 +6,8 @@ from time import sleep
 
 @then('Verify Sign In form')
 def verify_signin_form(context):
-  actual_text = context.driver.find_element(By.XPATH, '//*[text()="Sign in or create account"]').text
-  assert "Sign in or create account" in actual_text, f"Error, expected 'Sign in or create account' not in actual {actual_text}"
+  # actual_text = context.driver.find_element(By.XPATH, '//*[text()="Sign in or create account"]').text
+  # assert "Sign in or create account" in actual_text, f"Error, expected 'Sign in or create account' not in actual {actual_text}"
+  context.app.signin_page.verify_signin_form()
+
+

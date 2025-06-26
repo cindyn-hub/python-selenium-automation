@@ -10,7 +10,12 @@ def verify_empty_cart(context):
     context.app.cart_page.verify_empty_cart()
 
 
-@then('Verify cart total price is 6.01')
-def verify_cart_price(context):
-    actual_text = context.driver.find_element(By.XPATH, '//*[contains(text(), "6.01")]').text
-    assert "6.01" in actual_text, f"Error, expected cart total '6.01' not in actual {actual_text}"
+@then('Verify cart total price is {price}')
+def verify_cart_price(context, price):
+    # actual_text = context.driver.find_element(By.XPATH, '//*[contains(text(), "{price}")]').text
+    # assert price in actual_text, f"Error, expected cart total '{price}' not in actual {actual_text}"
+    context.app.cart_page.verify_cart_price()
+
+@then('Verify Cart page opened')
+def verify_cart_opened(context):
+    context.app.cart_page.verify_cart_opened()

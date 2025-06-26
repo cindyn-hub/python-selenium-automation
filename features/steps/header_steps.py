@@ -10,11 +10,11 @@ CART_BTN = By.XPATH, "//div[@data-test='@web/CartIcon']"
 SIGNIN_LINK = By.XPATH, '//span [@class="sc-43f80224-3 fBDEOp h-margin-r-x3"]'
 
 
-@when('Search for {product}')
-def search_products(context, product):
+@when('Search for {search_word}')
+def search_product(context, search_word):
   # context.driver.find_element(*SEARCH_BAR).send_keys(product)
   # context.driver.wait.until(EC.element_to_be_clickable(SEARCH_BTN)).click()
-  context.app.header.search_product()
+  context.app.header.search_product(search_word)
 
 @when('Click Cart icon')
 def click_cart_icon(context):
@@ -23,7 +23,8 @@ def click_cart_icon(context):
 
 @when('Click Sign In link')
 def click_signin_link(context):
-    context.driver.wait.until(EC.element_to_be_clickable(SIGNIN_LINK)).click()
+    # context.driver.wait.until(EC.element_to_be_clickable(SIGNIN_LINK)).click()
+    context.app.header.click_signin_link()
 
 
 @then('Verify header has {number} links')

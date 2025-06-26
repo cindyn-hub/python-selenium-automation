@@ -8,10 +8,10 @@ SEARCH_RESULTS_TXT = (By.XPATH, "//div[@data-test='lp-resultsCount']")
 
 @when('Click add to cart')
 def click_add_to_cart(context):
-  sleep(10)
-  context.driver.find_element(*ADD_TO_CART_BTN).click()
-  sleep(3)
-
+  # sleep(10)
+  # context.driver.find_element(*ADD_TO_CART_BTN).click()
+  # sleep(3)
+  context.app.search_results_page.click_add_to_cart()
 
 
 @then('Verify search worked for {expected_product}')
