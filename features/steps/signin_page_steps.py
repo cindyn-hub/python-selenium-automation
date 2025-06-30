@@ -3,6 +3,17 @@ from behave import given, when, then
 from time import sleep
 
 
+@given('Open sign in page')
+def open_signin(context):
+  context.app.signin_page.open_signin()
+
+@when('Click on Target terms and conditions link')
+def click_terms_conditions(context):
+  context.app.signin_page.click_terms_conditions()
+
+@when('Switch to the newly opened window')
+def switch_window(context):
+  context.app.signin_page.switch_to_new_window()
 
 @then('Verify Sign In form')
 def verify_signin_form(context):
