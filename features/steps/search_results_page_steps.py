@@ -19,3 +19,13 @@ def verify_search_results(context, expected_product):
   # actual_text = context.driver.find_element(*SEARCH_RESULTS_TXT).text
   # assert expected_product in actual_text, f"Error, expected {expected_product} not in actual {actual_text}"
   context.app.search_results_page.verify_search_results()
+
+
+@when('Hover favorites icon')
+def hover_fav_icon(context):
+  context.app.search_results_page.hover_fav_icon()
+
+@then('Favorites tooltip is shown')
+def verify_fav_tt_shown(context):
+  context.app.search_results_page.verify_fav_tt_shown()
+

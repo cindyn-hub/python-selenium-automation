@@ -1,5 +1,6 @@
 from pages.cart_page import CartPage
 from pages.header import Header
+from pages.help_page import HelpPage
 from pages.navigation_panel import NavigationPanel
 from pages.privacy_policy_page import PrivacyPolicyPage
 from pages.search_results_page import SearchResultsPage
@@ -24,6 +25,7 @@ class Application:
         self.terms_conditions_page = TermsConditionsPage(driver)
         self.target_app_page = TargetAppPage(driver)
         self.privacy_policy_page = PrivacyPolicyPage(driver)
+        self.help_page = HelpPage(driver)
 
 
 

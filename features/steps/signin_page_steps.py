@@ -15,6 +15,22 @@ def click_terms_conditions(context):
 def switch_window(context):
   context.app.signin_page.switch_to_new_window()
 
+@when('Enter correct email and click Continue')
+def enter_email_click(context):
+  context.app.signin_page.enter_email_click(context)
+
+@when('Enter incorrect password')
+def enter_incorrect_password(context):
+  context.app.signin_page.enter_incorrect_password(context)
+
+@when('Click Sign in with password')
+def click_sign_in_password(context):
+  context.app.signin_page.click_sign_in_password()
+
+@then('Verify error message is shown')
+def verify_error_message(context):
+  context.app.signin_page.verify_error_message()
+
 @then('Verify Sign In form')
 def verify_signin_form(context):
   # actual_text = context.driver.find_element(By.XPATH, '//*[text()="Sign in or create account"]').text

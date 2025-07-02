@@ -11,3 +11,9 @@ Feature: Test for Target Search
 #    Given Open target main page
 #    When Search for mug
 #    Then Verify search worked for mug
+
+  Scenario: User can see favorites tooltip for search results
+    Given Open target main page
+    When Search for tea
+    And Hover favorites icon
+    Then Favorites tooltip is shown
